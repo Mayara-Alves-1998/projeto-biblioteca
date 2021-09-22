@@ -6,6 +6,5 @@ public interface Cliente_Inter {
 	public abstract void statusCliente();
 	public abstract void abrirAssinatura(String tipo, Double credito);
 	public abstract void fecharAssinatura();
-	public abstract void alugar();
 	public abstract void pagarMensalidade();
 }

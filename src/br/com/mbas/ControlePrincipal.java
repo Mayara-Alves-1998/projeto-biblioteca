@@ -17,5 +17,20 @@ public class ControlePrincipal {
 		c[0].pagarMensalidade();
 		c[0].apresentarCliente();
 		c[0].statusCliente();
+		
+		c[2].abrirAssinatura("Premium", 120.0);
+		c[2].pagarMensalidade();
+		c[2].statusCliente();
+		
+		CadastroLivros l[] = new CadastroLivros[5];
+		
+		l[0] = new CadastroLivros("Assassinato no Expresso do Oriente", "Agatha Christie");
+		l[1] = new CadastroLivros("Assassinato na Mesopotamia", "Agatha Christie");
+		l[2] = new CadastroLivros("Um corpo na biblioteca", "Agatha Christie");
+		l[3] = new CadastroLivros("O caso dos 10 negrinhos", "Agatha Christie");
+		l[4] = new CadastroLivros("Assassinato no Rio Nilo", "Agatha Christie");
+		
+		l[0].status();
+		
 	}
 }

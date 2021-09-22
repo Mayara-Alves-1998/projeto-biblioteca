@@ -13,6 +13,7 @@ public class CadastroCliente implements Cliente_Inter {
 	private Boolean assinaturaAtiva;
 	private Boolean mensalidadePaga;
 	private String tipoAssinatura;
+	private CadastroLivros livro;
 	
 	public CadastroCliente(String nome, String sexo, Integer idade) {
 		this.setNome(nome);
@@ -72,6 +73,12 @@ public class CadastroCliente implements Cliente_Inter {
 	public void setTipoAssinatura(String tipo) {
 		this.tipoAssinatura = tipo;
 	}
+	public CadastroLivros getLivro() {
+		return this.livro;
+	}
+	public void setLivro(CadastroLivros livro) {
+		this.livro = livro;
+	}
 
 	@Override
 	public void apresentarCliente() {
@@ -97,8 +104,9 @@ public class CadastroCliente implements Cliente_Inter {
 		System.out.println("---------------------STATUS---------------------");
 		System.out.println("Nome: " + this.getNome());
 		System.out.println("Idade: " + this.idade);
-		System.out.println("Crédito: " + this.getCredito());
 		if(this.getAssinaturaAtiva()) {
+			System.out.println("Crédito: " + this.getCredito());
+			System.out.println("Quantidade alugados: " + this.getAlugados());
 			System.out.println("Tipo de assinatura: " + this.getTipoAssinatura());
 			if(this.getTipoAssinatura() == "Basica") {
 				System.out.println("Valor pago mensalmente: R$" + MENSAL_BASICA);
@@ -155,11 +163,6 @@ public class CadastroCliente implements Cliente_Inter {
 		} else {
 			System.err.println("Conta já inátiva!");
 		}
-	}
-
-	@Override
-	public void alugar() {
-		
 	}
 
 	@Override
